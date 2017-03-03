@@ -9,17 +9,20 @@ const app = express();
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static(path.join(__dirname, "public")));
+app.set('view engine', 'ejs');
 
 app.get("/", (req, res)=> {
-    res.sendFile(path.join(__dirname, "index.html"));
+    db.collection('names').find().toArray((err, results) => {
+        res.render("index.ejs", {names:results});
+    });
 });
 
 app.post("/names", (req, res) => {
     db.collection('names').save(req.body, (err, result) => {
-        if (err) return console.log(err)
-        console.log('saved to database')
-        res.redirect('/')
-    })
+        if (err) return console.log(err);
+        console.log('saved to database');
+        res.redirect('/');
+    });
 });
 
 MongoClient.connect(`mongodb://${config.db.username}:${config.db.password}@ds133328.mlab.com:33328/test-db-crud`, (err, database) => {

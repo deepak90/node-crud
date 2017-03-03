@@ -69,9 +69,15 @@ body {
   }
 }
 
-.jumbotron .btn {
-  float: right;
-}
 .jumbotron {
   padding: 2rem 1rem;
+}
+.item-actions{
+  display: none;
+}
+.name-list-item:hover .item-actions {
+  display: block;
+}
+.name-list-item {
+  min-height: 65px;
 }
