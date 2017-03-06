@@ -12,7 +12,6 @@
 </head>
 
 <body cz-shortcut-listen="true">
-
     <div class="container">
         <div class="header clearfix">
             <nav>
@@ -53,16 +52,16 @@
                                 <% var fname = names[i].fname; var lname = names[i].lname %>
                                 <% include partials/editForm.ejs %>
                             </div>
-                            <div class="btn-group btn-group-sm item-actions" role="group" aria-label="Basic example">
+                            <div class="btn-group btn-group-md item-actions" role="group" aria-label="Basic example">
                                 <button type="button" class="btn btn-outline-primary edit-item">Edit</button>
-                                <button type="button" class="btn btn-outline-danger delete-item">Delete</button>
+                                <button type="button" class="btn btn-outline-danger delete-item" data-toggle="modal" data-target="#deleteModal">Delete</button>
                             </div>
                         </li>
                     <% } %>
                 </ul>
             </div>
+           <% include partials/deleteModal.ejs %>
         </div>
-
     </div>
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
     <script src="js/app.js" type="text/javascript"></script>
