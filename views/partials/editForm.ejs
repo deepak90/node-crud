@@ -1,0 +1,14 @@
+<h4>Edit Record</h4>
+<form action="/names" method="POST">
+    <div class="form-group">
+        <label for="fname">First Name</label>
+        <input type="text" value=<%= fname %> class="form-control" name="fname" id="fname" required>
+    </div>
+    <div class="form-group">
+        <label for="lname">Last Name</label>
+        <input type="text" value=<%= lname %> class="form-control" name="lname" id="lname" required>
+    </div>
+    
+    <button class="btn btn-outline-primary float-right" type="submit">Update</button>
+    <a class="btn btn-outline-danger float-right item-edit-cancel">Cancel</a>
+</form>

@@ -1,3 +1,10 @@
+/*hide and show classes */
+.show {
+  display: block !important;
+}
+.hidden {
+  display: none !important;
+}
 /* Space out content a bit */
 body {
   padding-top: 1.5rem;
@@ -80,4 +87,29 @@ body {
 }
 .name-list-item {
   min-height: 65px;
+}
+.edit-form-container {
+  width: 100%;
+  margin-top: 15px;
+}
+.name-list-item .edit-form-container {
+  display: none;
+}
+
+li[data-isediting="true"] {
+  background: #f7f7f9;
+}
+
+li[data-isediting="true"] .name-item {
+  display: none;
+}
+li[data-isediting="true"] .edit-form-container {
+  display: block;
+}
+
+li[data-isediting="true"]:hover .item-actions {
+  display: none;
+}
+form .btn {
+  margin-left: 20px;
 }
